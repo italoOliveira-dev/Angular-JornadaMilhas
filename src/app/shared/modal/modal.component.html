@@ -1,0 +1,49 @@
+<section class="modal">
+  <h1 mat-dialog-title>Viajante</h1>
+  <div mat-dialog-content>
+    <div class="idade">
+      <app-seletor-passageiro
+		titulo="Adulto"
+		subTitulo="(Acima de 12 anos)"
+		[formControl]="formBuscaService.obterControle('adultos')"
+	  ></app-seletor-passageiro>
+      <app-seletor-passageiro
+		titulo="crianças"
+		subTitulo="(Entre 2 e 11 anos)"
+		[formControl]="formBuscaService.obterControle('criancas')"
+	  ></app-seletor-passageiro>
+	  <app-seletor-passageiro
+		titulo="Adulto"
+		subTitulo="(Até 2 anos)"
+		[formControl]="formBuscaService.obterControle('bebes')"
+	  ></app-seletor-passageiro>
+    </div>
+    <div class="categoria">
+      <h3>Categoria</h3>
+      <mat-chip-listbox aria-label="Fish selection">
+        <mat-chip-option
+		value="Econômica"
+		[selected]="formBuscaService.formBusca.get('tipo')?.value === 'Econômica'"
+		(selectionChange)="formBuscaService.alterarTipo($event, 'Econômica')"
+		>
+			Econômica
+		</mat-chip-option>
+        <mat-chip-option
+		value="Executiva"
+		[selected]="formBuscaService.formBusca.get('tipo')?.value === 'Executiva'"
+		(selectionChange)="formBuscaService.alterarTipo($event, 'Executiva')"
+		>
+			Executiva
+		</mat-chip-option>
+      </mat-chip-listbox>
+    </div>
+  </div>
+  <div class="botoes">
+    <div mat-dialog-actions>
+      <button mat-raised-button mat-dialog-close>Close</button>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-raised-button color="primary">Adicionar</button>
+    </div>
+  </div>
+</section>

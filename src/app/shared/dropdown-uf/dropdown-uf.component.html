@@ -1,0 +1,18 @@
+<mat-form-field class="input-container" appearance="outline">
+	<mat-label>{{ label }}</mat-label>
+	@if(iconePrefixo) {
+		<mat-icon matPrefix>{{ iconePrefixo }}</mat-icon>
+	}
+	<input
+		matInput
+		[matAutocomplete]="auto"
+		[formControl]="control"
+		ngDefaultControl
+	>
+	<mat-icon matSuffix>search</mat-icon>
+	<mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFN">
+		@for (estado of filtoUnidadeFederativa$ | async ; track estado) {
+		  <mat-option [value]="estado">{{estado.nome}}</mat-option>
+		}
+	</mat-autocomplete>
+</mat-form-field>

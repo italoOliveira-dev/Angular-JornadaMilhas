@@ -1,0 +1,37 @@
+$color-texto: #1d1b20;
+.modal {
+  padding: 2rem;
+
+  h1 {
+    font-size: 2rem;
+    color: $color-texto;
+  }
+
+  .idade {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 70px;
+
+  }
+
+  .categoria {
+    h3 {
+      color: $color-texto;
+      font-weight: 500;
+      margin: 20px 0 0 0;
+    }
+  }
+
+  .botoes {
+    display: flex;
+    width: 100%;
+    div {
+      width: 50%;
+      button {
+        width: 100%;
+      }
+    }
+  }
+}

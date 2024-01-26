@@ -1,0 +1,25 @@
+<app-banner src="/assets/Imagens/JORNADA-banner-montado-02.png" alt="Banner da aplicação jornada milhas"></app-banner>
+<app-container>
+  <app-form-busca></app-form-busca>
+  <h2>Promoções</h2>
+  <div class="card-wrapper">
+    @for (lugar of promocoes; track $index) {
+      <app-card-busca
+        imagem="{{ lugar.imagem }}"
+        destino="{{ lugar.destino }}"
+        preco="{{ lugar.preco}}"
+      ></app-card-busca>
+    }
+  </div>
+  <h2>Depoimento</h2>
+  <div class="card-wrapper">
+    @for (depoimento of depoimentos; track $index) {
+      <app-card-depoimento
+        avatar="{{ depoimento.avatar }}"
+        texto="{{ depoimento.texto }}"
+        autor="{{ depoimento.autor }}"
+      ></app-card-depoimento>
+    }
+  </div>
+</app-container>
+<app-banner src="/assets/Imagens/2 Banner homepage2.png" alt="Banner da aplicação jornada milhas"></app-banner>

@@ -1,0 +1,16 @@
+<div class="card-idade">
+	<h3>{{ titulo }}</h3>
+	<p>{{ subTitulo }}</p>
+	<div class="quantidade">
+		<app-botao-controle
+			operacao="decrementar"
+			(click)="decrementar()"
+		></app-botao-controle>
+		<span>{{ value }}</span>
+		<app-botao-controle
+			operacao="incrementar"
+			(click)="incrementar()"
+			>
+		</app-botao-controle>
+	</div>
+</div>
